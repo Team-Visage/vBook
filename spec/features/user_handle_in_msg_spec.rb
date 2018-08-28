@@ -5,6 +5,6 @@ RSpec.feature 'User handle shows in message', type: :feature do
     visit('/posts/new')
     login_to_acebook
     send_test_msg
-    expect(page).to have_content('') # write user handle code here
+    expect(page).to have_content('atestemail@gmail.com') # write user handle code here
   end
 end

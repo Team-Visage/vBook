@@ -1,5 +1,9 @@
+
 <% @posts.each do |post| %>
+<div class="post">
+  <h2><%= post.username %> : <%= post.created_at %></h2>
   <p><%= post.message %></p>
+</div>
 <% end %>
 
 <%= link_to new_post_path do %>

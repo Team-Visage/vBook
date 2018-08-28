@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    message = params.require(:post).permit(:message)
+    { message: message[:message], username: current_user.email }
   end
 end

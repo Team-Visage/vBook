@@ -11,3 +11,9 @@ def login_to_acebook
   fill_in 'user_password_confirmation',	with: test_login[:password]
   click_button 'Sign up'
 end
+
+def send_test_msg
+  #click_link 'New post'
+  fill_in 'Message', with: 'Hello, world!'
+  click_button 'Submit'
+end

@@ -3534,3 +3534,225 @@ Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"message"=>"Hello, world!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello, world!"], ["created_at", "2018-08-28 15:28:50.329616"], ["updated_at", "2018-08-28 15:28:50.329616"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts
+Completed 302 Found in 11ms (ActiveRecord: 4.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"message"=>"Hello, world!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello, world!"], ["created_at", "2018-08-28 15:28:50.336758"], ["updated_at", "2018-08-28 15:28:50.336758"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."message" = $1 LIMIT $2[0m  [["message", "Hello, world!"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered posts/index.html.erb within layouts/application (0.2ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 159ms (Views: 157.5ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 3.8ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"atestemail@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "atestemail@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password") VALUES ($1, $2) RETURNING "id"[0m  [["email", "atestemail@gmail.com"], ["encrypted_password", "$2a$04$pbwfzF.7QOZ4aP46tCP19.qAfzdByDHc82J/MFp3ckSFcw02nGlVu"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/new
+Completed 302 Found in 33ms (ActiveRecord: 1.9ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+Started POST "/posts" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"message"=>"a test post"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "a test post"], ["created_at", "2018-08-28 15:28:50.644365"], ["updated_at", "2018-08-28 15:28:50.644365"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-28 16:28:50 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"message"=>"Hello, world!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello, world!"], ["created_at", "2018-08-28 15:31:22.512270"], ["updated_at", "2018-08-28 15:31:22.512270"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"message"=>"Hello, world!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "Hello, world!"], ["created_at", "2018-08-28 15:31:22.520831"], ["updated_at", "2018-08-28 15:31:22.520831"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."message" = $1 LIMIT $2[0m  [["message", "Hello, world!"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered posts/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 180ms (Views: 178.1ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 38ms (Views: 24.8ms | ActiveRecord: 2.6ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+Started POST "/users" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"email"=>"atestemail@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "atestemail@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password") VALUES ($1, $2) RETURNING "id"[0m  [["email", "atestemail@gmail.com"], ["encrypted_password", "$2a$04$f6E0S9NIhr0ex4n1i.8c2eXIY0O6C4D0tVtd3FR0S1JMMu72Mkl3C"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts/new
+Completed 302 Found in 35ms (ActiveRecord: 1.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.7ms)
+Started POST "/posts" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "post"=>{"message"=>"a test post"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("message", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["message", "a test post"], ["created_at", "2018-08-28 15:31:22.881023"], ["updated_at", "2018-08-28 15:31:22.881023"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/posts
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/posts" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+Started GET "/posts/new" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-28 16:31:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
-
-  before_action :authenticate_model!
-
   def new
+    p authenticate_user!
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
+  end
+
+  def login
+    redirect_to users_sign_in
   end
 
   def index

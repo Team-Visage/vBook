@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180829085050) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", limit: 40
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

@@ -11,3 +11,4 @@ RSpec.feature 'User Logout', type: :feature do
     expect(page).to_not have_content('Logout')
   end
 end
+  

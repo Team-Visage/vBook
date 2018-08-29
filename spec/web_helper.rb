@@ -10,7 +10,7 @@ end
 
 def test_user
   {
-    email: 'UWotM8@hotmail.com',
+    email: 'aTestUser@@hotmail.com',
     password: '1234567',
     confirmed_at: '2018-08-29 08:52:47.366617'
   }
@@ -31,7 +31,7 @@ end
 
 def login_to_acebook
   click_link 'Sign in'
-  fill_in 'user_email',	with: 'UWotM8@hotmail.com'
+  fill_in 'user_email',	with: 'aTestUser@hotmail.com'
   fill_in 'user_password',	with: '1234567'
   click_button 'Log in'
 end

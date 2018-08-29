@@ -9,7 +9,7 @@ def test_login
 end
 
 def test_user
-  test_details = {
+  {
     email: 'UWotM8@hotmail.com',
     password: '1234567',
     confirmed_at: '2018-08-29 08:52:47.366617'
@@ -17,7 +17,7 @@ def test_user
 end
 
 def test_post
-  test_message = {
+  {
     message: 'hello i am a test message',
     created_at: '2018-08-29 08:52:47.366617',
     username: 'Jackiscool'

@@ -17,10 +17,22 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def new_comment
+
+  end
+
+  def like
+    render text: 'hello'
+  end
+
+  def report_comment
+
+  end
+
   private
 
   def post_params
     message = params.require(:post).permit(:message)[:message]
-    { message: message, username: current_user.email }
+    { message: message, user_id: current_user.id }
   end
 end

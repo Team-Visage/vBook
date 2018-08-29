@@ -16,5 +16,15 @@
 
  .post {
     border-style: outset;
-    background-color: 'yellow';
+    background-color: coral;
+    
+  }
+
+  .post_head {
+    display: flex;
+    border-style: dotted;
+  }
+
+  .post_body {
+    
   }

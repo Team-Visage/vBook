@@ -1,7 +1,13 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_friend_accounts_spec.rb": [
+
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_homePage_spec.rb": [
+
+      ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_liking_posts_spec.rb": [
 
       ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_login_spec.rb": [
@@ -15,7 +21,7 @@
         null,
         1,
         1,
-        0,
+        1,
         0,
         null,
         null
@@ -26,7 +32,7 @@
         3,
         1,
         1,
-        0,
+        1,
         0,
         0,
         null,
@@ -41,8 +47,8 @@
         1,
         1,
         3,
-        0,
-        0,
+        3,
+        3,
         0,
         0,
         null,
@@ -64,43 +70,46 @@
         1,
         1,
         3,
-        0,
+        3,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         1,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0,
         null,
         null
       ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_post_comments_spec.rb": [
+
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
+        1,
+        0,
+        null,
+        null,
+        1,
         0,
         0,
         null,
         null,
         1,
         0,
-        0,
         null,
         null,
         1,
-        0,
-        null,
-        null,
-        1,
-        4,
+        11,
         null,
         null,
         1,
@@ -118,6 +127,6 @@
         null
       ]
     },
-    "timestamp": 1535551237
+    "timestamp": 1535552658
   }
 }

@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
   def new
+    authenticate_user!
     @post = Post.new
   end
 
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
+  end
+
+  def login
+    redirect_to users_sign_in
   end
 
   def index
@@ -15,6 +20,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    message = params.require(:post).permit(:message)[:message]
+    { message: message, username: current_user.email }
   end
 end

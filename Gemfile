@@ -40,6 +40,7 @@ group :development, :test do
   gem 'simplecov-console', require: false
   gem 'rspec-rails', '~> 3.5'
   gem "factory_bot_rails", "~> 4.0"
+  gem "launchy"
 end
 
 group :development do

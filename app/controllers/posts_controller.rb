@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-    p authenticate_user!
+    authenticate_user!
     @post = Post.new
   end
 
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    message = params.require(:post).permit(:message)
-    { message: message[:message], username: current_user.email }
+    message = params.require(:post).permit(:message)[:message]
+    { message: message, username: current_user.email }
   end
 end

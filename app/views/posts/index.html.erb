@@ -1,7 +1,7 @@
 
 <% @posts.each do |post| %>
 <div class="post">
-  <h2><%= post.username %> : <%= post.created_at %></h2>
+  <h3><%= post.username %> : <%= post.created_at %></h3>
   <p><%= post.message %></p>
 </div>
 <% end %>

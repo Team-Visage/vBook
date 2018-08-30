@@ -1,4 +1,20 @@
+<div class="new_post">
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+&emsp;
+<% if user_signed_in? %>
+<%= link_to('Edit registration ', edit_user_registration_path)%>
+&emsp;
+<%= link_to('Logout ', destroy_user_session_path, method: :delete)%>
 
+<% else %>
+<%= link_to '/users/sign_in' do %>
+  Sign in
+<% end %>
+&emsp;
+<% end %> 
+</div>
 <% @posts.reverse_each do |post| %>
 <div class="post">
   <div class="post_head">
@@ -16,8 +32,4 @@
   <%= button_to 'Like', posts_path, method: :post %>
   </div>
 </div>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>

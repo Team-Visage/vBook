@@ -28,3 +28,13 @@
   .post_body {
     
   }
+
+  .new_post {
+    border-style: outset;
+    background-color: beige;
+    display: flex;
+  }
+
+  .message_entry {
+    background-color: magenta;
+  }

@@ -1,6 +1,32 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/controllers/profile_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/profile_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        17,
+        17,
+        17,
+        17,
+        null,
+        null
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_homePage_spec.rb": [
 
       ],
@@ -123,25 +149,27 @@
         1,
         null
       ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/helpers/profile_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/home_controller.rb": [
         1,
         null,
         null,
-        null,
-        null
-      ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        17,
-        17,
-        17,
-        17,
         null,
         null
       ],
@@ -174,6 +202,6 @@
         null
       ]
     },
-    "timestamp": 1535630268
+    "timestamp": 1535630346
   }
 }

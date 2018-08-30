@@ -27,9 +27,5 @@
   </div>
   <div class="post_body">
   <p><%= post.message %></p>
-  </div>
-  <div class="post_actions" name="Like<%=post.id%>">
-  <%= button_to 'Like', "/posts?posts[id]=#{post.id}", method: :post %>
-  </div>
 </div>
 <% end %>

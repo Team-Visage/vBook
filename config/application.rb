@@ -18,8 +18,8 @@ module Acebook
       :address => 'smtp.gmail.com',
       :port => 587,
       :domain => 'gmail.com',
-      :user_name => 'daniel.mista@gmail.com',
-      :password => 'dota2123',
+      :user_name => 'daniel.dhartog@gmail.com',
+      :password => 'Secureme8!',
       :authentication => 'plain',
       :enable_starttls_auto => true
     }

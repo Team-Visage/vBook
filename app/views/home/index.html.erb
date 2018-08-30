@@ -1,8 +1,14 @@
 &emsp;
 <% if user_signed_in? %>
+<%= link_to "Sign_out", destroy_user_session_path, :method => 'delete' %>
+&emsp;
 <%= link_to('Edit registration ', edit_user_registration_path)%>
 &emsp;
 <%= link_to('Logout ', destroy_user_session_path, method: :delete)%>
+&emsp;
+<%= link_to new_post_path do %>
+  New post
+<% end %>
 &emsp;
 <%= link_to('Profile', '/profile') %>
 <% else %>
@@ -10,4 +16,4 @@
   Sign in
 <% end %>
 &emsp;
-<% end %> 
+<% end %>

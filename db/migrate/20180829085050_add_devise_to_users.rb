@@ -34,9 +34,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
       
       # description/ display
 
-      t.string :image_url
-      t.string :bio_desc
-
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
     end

@@ -22,3 +22,6 @@ First, clone this repository. Then:
 > bundle exec rspec # Run the tests to ensure it works
 > bin/rails server # Start the server at localhost:3000
 ```
+## How use the app
+
+Start by creating the databases. You do this by opening the command line and entering the following: 'rails db:create', 'bundle', 'rails db:migrate', 'rails db:migrate RAILS_ENV=test'.

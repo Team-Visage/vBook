@@ -27,28 +27,28 @@ end
 
 def logout_of_acebook
   visit('/')
-  click_link 'Logout'
+  click_link('Logout')
 end
 
 def login_to_acebook
-  click_link 'Sign in'
-  fill_in 'user_email',	with: 'UWotM8@hotmail.com'
-  fill_in 'user_password',	with: '1234567'
-  click_button 'Log in'
+  click_link('Sign up')
+  fill_in('user_email',	with: 'UWotM8@hotmail.com')
+  fill_in('user_password',	with: '1234567')
+  click_button('Log in')
 end
 
 def sign_up_to_acebook
-  click_link 'Sign up'
-  fill_in 'user_email',	with: test_login[:email]
-  fill_in 'user_password',	with: test_login[:password]
-  fill_in 'user_password_confirmation',	with: test_login[:password]
-  click_button 'Sign up'
+  click_link('Sign up')
+  fill_in('user_email',	with: test_login[:email])
+  fill_in('user_password',	with: test_login[:password])
+  fill_in('user_password_confirmation',	with: test_login[:password])
+  click_button('Sign up')
 end
 
 def send_test_msg
-  click_link 'New post'
-  fill_in 'Message', with: 'Hello, world!'
-  click_button 'Submit'
+  click_link('New post')
+  fill_in('Message', with: 'Hello, world!')
+  click_button('Submit')
 end
 
 def add_test_data_to_db

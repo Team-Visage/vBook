@@ -1,7 +1,7 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
 <div class="post">
   <div class="post_head">
   <img src="<%=User.find(post.user_id).image_url%>" width="8%">

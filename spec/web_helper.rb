@@ -11,9 +11,10 @@ end
 def test_user
   {
     id: 1,
-    email: 'aTestUser@@hotmail.com',
+    email: 'UWotM8@hotmail.com',
     password: '1234567',
-    confirmed_at: '2018-08-29 08:52:47.366617'
+    confirmed_at: '2018-08-29 08:52:47.366617',
+    username: "JackIsCool"
   }
 end
 
@@ -21,7 +22,7 @@ def test_post
   {
     message: 'hello i am a test message',
     created_at: '2018-08-29 08:52:47.366617',
-    user_id: '1'
+    user_id: "1"
   }
 end
 

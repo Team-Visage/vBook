@@ -1,26 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/controllers/home_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/home_controller.rb": [
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_homePage_spec.rb": [
 
       ],
@@ -71,7 +51,7 @@
         null,
         1,
         1,
-        1,
+        0,
         null,
         1,
         1,
@@ -120,6 +100,45 @@
         1,
         null
       ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/helpers/like_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/home_controller.rb": [
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        17,
+        17,
+        17,
+        17,
+        null,
+        null
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
@@ -149,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1535554343
+    "timestamp": 1535625810
   }
 }

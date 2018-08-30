@@ -1,0 +1,13 @@
+&emsp;
+<% if user_signed_in? %>
+<%= link_to('Edit registration ', edit_user_registration_path)%>
+&emsp;
+<%= link_to('Logout ', destroy_user_session_path, method: :delete)%>
+&emsp;
+<%= link_to('Profile', '/profile') %>
+<% else %>
+<%= link_to '/users/sign_in' do %>
+  Sign in
+<% end %>
+&emsp;
+<% end %> 

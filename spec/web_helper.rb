@@ -31,7 +31,7 @@ def logout_of_acebook
 end
 
 def login_to_acebook
-  click_link('Sign up')
+  #  click_link('Sign up')
   fill_in('user_email',	with: 'UWotM8@hotmail.com')
   fill_in('user_password',	with: '1234567')
   click_button('Log in')

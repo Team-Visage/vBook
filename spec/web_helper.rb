@@ -20,6 +20,7 @@ end
 
 def test_post
   {
+    id: 1,
     message: 'hello i am a test message',
     created_at: '2018-08-29 08:52:47.366617',
     user_id: "1"

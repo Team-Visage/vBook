@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 20180829085050) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"    , null: true
+    t.integer "post_likes" , null: true
+    t.integer "post_flags" , null: true
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

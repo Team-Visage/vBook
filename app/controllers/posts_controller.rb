@@ -35,7 +35,6 @@ class PostsController < ApplicationController
 
   def post_params
     if !params[:post].nil?
-      p params[:post]
       message = params[:post][:message]
       { message: message, user_id: current_user.id }
     else

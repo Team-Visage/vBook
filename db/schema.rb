@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 20180830103138) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "post_likes"
+    t.integer "post_likes", default: 0
     t.integer "post_flags"
     t.string "post_tags"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

@@ -10,7 +10,6 @@ end
 
 def test_user
   {
-    id: 1,
     email: 'UWotM8@hotmail.com',
     password: '1234567',
     confirmed_at: '2018-08-29 08:52:47.366617',
@@ -20,10 +19,9 @@ end
 
 def test_post
   {
-    id: 1,
     message: 'hello i am a test message',
     created_at: '2018-08-29 08:52:47.366617',
-    user_id: "1"
+    user_id: User.where(username: 'uwotm8').first.id
   }
 end
 

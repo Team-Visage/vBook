@@ -7,7 +7,8 @@
 <%= link_to('Edit registration ', edit_user_registration_path)%>
 &emsp;
 <%= link_to('Logout ', destroy_user_session_path, method: :delete)%>
-
+&emsp;
+<%= link_to('Profile', '/profile') %>
 <% else %>
 <%= link_to '/users/sign_in' do %>
   Sign in
@@ -27,5 +28,9 @@
   </div>
   <div class="post_body">
   <p><%= post.message %></p>
+  </div>
+  <div class="post_actions" name="Like<%=post.id%>">
+  <%= button_to 'Like', "/posts?posts[id]=#{post.id}", method: :post %>
+  </div>
 </div>
 <% end %>

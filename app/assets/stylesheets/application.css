@@ -38,3 +38,11 @@
   .message_entry {
     background-color: magenta;
   }
+
+  .bio {
+    border-style: dotted;
+    background-color: beige;
+    position: relative;
+    min-height: 200px;
+    min-width: 500px;
+  }

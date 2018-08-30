@@ -1,1 +1,16 @@
-test page
+<div class="profile_page">
+    <div class="profile head">
+    Welcome <%= current_user.username %>
+    <img src="<%= current_user.image_url%>">
+    </div>
+    <div class="account_info">
+    <%=current_user.confirmed_at%>
+    <%=current_user.last_sign_in_at%>
+    <%= current_user.email%>
+    </div>
+    <div class="bio">
+    <textarea class="bio"id="bio_text"><%=current_user.bio_desc%></textarea>
+    </div>
+    <%= button_to 'Edit bio', "/profile?bio_desc=#{params[:bio_text]}", method: :post%>
+    </div>
+</div>

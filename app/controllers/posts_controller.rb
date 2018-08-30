@@ -34,7 +34,11 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    message = params.require(:post).permit(:message)[:message]
-    { message: message, user_id: current_user.id }
+    if !params[:post].nil?
+      message = params[:post][:message]
+      { message: message, user_id: current_user.id }
+    else
+      add_likes_to_post(params)
+    end
   end
 end

@@ -26,10 +26,11 @@ class PostsController < ApplicationController
   private
 
   def add_likes_to_post(params)
+    authenticate_user!
     @post = Post.find(params[:posts][:id])
-      @post.post_likes += 1
-      @post.save
-      params = nil
+    @post.post_likes += 1
+    @post.save
+    params = nil
   end
 
   def post_params

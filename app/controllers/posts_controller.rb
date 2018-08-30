@@ -17,18 +17,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def new_comment
-
-  end
-
-  def like
-    render text: 'hello'
-  end
-
-  def report_comment
-
-  end
-
   private
 
   def post_params

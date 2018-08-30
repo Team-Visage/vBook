@@ -31,17 +31,19 @@ def logout_of_acebook
 end
 
 def login_to_acebook
-  #  click_link('Sign up')
+  click_link('Sign in')
   fill_in('user_email',	with: 'UWotM8@hotmail.com')
   fill_in('user_password',	with: '1234567')
   click_button('Log in')
 end
 
 def sign_up_to_acebook
+  click_link('Sign in')
   click_link('Sign up')
-  fill_in('user_email',	with: test_login[:email])
-  fill_in('user_password',	with: test_login[:password])
-  fill_in('user_password_confirmation',	with: test_login[:password])
+  fill_in('user_email',	with: 'UWotM8@hotmail.com')
+  fill_in('user_username',	with: 'UWotM8')
+  fill_in('user_password',	with: '1234567')
+  fill_in('user_password_confirmation',	with: '1234567')
   click_button('Sign up')
 end
 

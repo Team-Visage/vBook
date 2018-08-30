@@ -1,5 +1,7 @@
-
-<% @posts.each do |post| %>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+<% @posts.reverse_each do |post| %>
 <div class="post">
   <div class="post_head">
   <img src="<%=User.find(post.user_id).image_url%>" width="8%">
@@ -12,12 +14,5 @@
   <div class="post_body">
   <p><%= post.message %></p>
   </div>
-  <div class="post_actions">
-  <%= button_to 'Like', posts_path, method: :post %>
-  </div>
 </div>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>

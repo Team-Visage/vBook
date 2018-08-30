@@ -58,3 +58,211 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 1.6ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1344049087128799065)[0m
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1344049087128799065)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-30 10:32:08 +0100
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 401 Unauthorized in 122ms (ActiveRecord: 40.3ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-30 10:32:08 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-30 10:32:08 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (9.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 680ms (Views: 676.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-08-30 10:32:10 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7txcP6NXYokTv/V2qnXakQeTS/lcazlYhUm8ElG5Dt7c9ZbGqkGRUpcY3ikwqjx8l2SHonK6ghcE6OW7Wh65Sg=="}
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-30 10:32:11 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-30 10:32:12 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-08-30 10:32:13 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-30 10:32:27 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2JKA1zY11t8IFCHZGm0KxT6hlKqkeApRocSS9loyGSw71VUI5AygriOPM5LY2HIRGayFH4ITaP5hKsYE90Fpqg==", "user"=>{"email"=>"hellow@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hellow@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hellow@gmail.com"], ["encrypted_password", "$2a$11$1uWlEs51IrTmuRkvFYVtcubmFpsupzgOEIQEfsKURwMQxQzVg2vAq"], ["confirmation_token", "ghmpZDD_z4ZMu7JG-C4y"], ["confirmation_sent_at", "2018-08-30 09:32:27.724252"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (6.5ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 40.6ms
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 21.0ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>You can confirm your account email through the link below:</p>
+    4: 
+    5: <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  
+app/views/devise/mailer/confirmation_instructions.html.erb:5:in `_app_views_devise_mailer_confirmation_instructions_html_erb__1750143445254579362_70165566891300'
+Started POST "/users" for 127.0.0.1 at 2018-08-30 10:33:16 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2JKA1zY11t8IFCHZGm0KxT6hlKqkeApRocSS9loyGSw71VUI5AygriOPM5LY2HIRGayFH4ITaP5hKsYE90Fpqg==", "user"=>{"email"=>"hellow@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hellow@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 200ms (Views: 45.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-30 10:33:38 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f8ovLma9Cf8WRnF6w2sWq7TqqrkLQO6F8is25mwWc9OcjfrxtIR/jj3dYzEB3m5/k+e7DC0rjCoyxWIUwWUDVQ==", "user"=>{"email"=>"hellow@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hellow@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "hellow@gmail.com"], ["encrypted_password", "$2a$11$41vUNQOsyDoU6eJoxmkhEe3qJndNDR0S0RKFG7Pq9Vyq2lPPFfcBa"], ["confirmation_token", "f3LNuQiJJ3fgHqKmKpdY"], ["confirmation_sent_at", "2018-08-30 09:33:38.373635"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (5.7ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 36.1ms
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>You can confirm your account email through the link below:</p>
+    4: 
+    5: <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  
+app/views/devise/mailer/confirmation_instructions.html.erb:5:in `_app_views_devise_mailer_confirmation_instructions_html_erb__1750143445254579362_70165566155660'
+Started GET "/" for 127.0.0.1 at 2018-08-30 10:34:42 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-30 10:34:46 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-08-30 10:34:49 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tVK4BHY3LstsgroZ241bt//SE0uc70tgNJUTbaYTOEFWFW3bpA5YukcZqFIZOCNj2N8C/rqEKc/0e0efC2BIxw==", "user"=>{"email"=>"jackthomasbranch@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "jackthomasbranch@yahoo.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2018-08-30 09:34:49.980062"], ["last_sign_in_at", "2018-08-30 08:37:58.611085"], ["sign_in_count", 3], ["id", 12]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/edit
+Completed 302 Found in 161ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2018-08-30 10:34:50 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 44ms (Views: 36.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-08-30 10:34:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-30 10:34:53 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered home/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 34ms (Views: 28.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 10:34:58 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (23.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Post:0x00007fa15f16e128>):
+    1: 
+    2: <% @posts.each do |post| %>
+    3: <div class="post">
+    4:   <h3><%= post.username %> : <%= post.created_at %></h3>
+    5:   <p><%= post.message %></p>
+    6: </div>
+    7: <% end %>
+  
+app/views/posts/index.html.erb:4:in `block in _app_views_posts_index_html_erb__2523552701971215411_70165564335020'
+app/views/posts/index.html.erb:2:in `_app_views_posts_index_html_erb__2523552701971215411_70165564335020'
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 10:36:11 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-08-30 10:36:21 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.9ms)
+
+

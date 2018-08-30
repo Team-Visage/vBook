@@ -19,10 +19,13 @@ ActiveRecord::Schema.define(version: 20180830111808) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_id"
+    t.integer "user_id"
+    t.integer "post_likes", default: 0
+    t.integer "post_flags"
+    t.string "post_tags"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -42,12 +45,12 @@ ActiveRecord::Schema.define(version: 20180830111808) do
     t.datetime "locked_at"
     t.string "username"
     t.string "bio_desc"
-    t.string "img_url"
+    t.string "image_url"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
-    t.index ["username"], name: "index_users_on_username"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

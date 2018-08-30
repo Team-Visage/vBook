@@ -14,7 +14,7 @@ def test_user
     email: 'UWotM8@hotmail.com',
     password: '1234567',
     confirmed_at: '2018-08-29 08:52:47.366617',
-    username: "JackIsCool"
+    username: "uwotm8"
   }
 end
 

@@ -4,6 +4,9 @@
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_homePage_spec.rb": [
 
       ],
+      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_like_posts_spec.rb": [
+
+      ],
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_login_spec.rb": [
         1,
         1,
@@ -47,11 +50,14 @@
         3,
         null,
         1,
-        null,
+        1,
+        1,
+        1,
+        1,
         null,
         1,
         1,
-        0,
+        1,
         null,
         1,
         1,
@@ -142,13 +148,13 @@
       "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/posts_controller.rb": [
         1,
         1,
+        6,
         5,
-        4,
         null,
         null,
         1,
-        4,
-        4,
+        5,
+        5,
         null,
         null,
         1,
@@ -156,18 +162,18 @@
         null,
         null,
         1,
-        11,
+        12,
         null,
         null,
         1,
         null,
         1,
-        4,
-        4,
+        5,
+        5,
         null,
         null
       ]
     },
-    "timestamp": 1535625810
+    "timestamp": 1535630268
   }
 }

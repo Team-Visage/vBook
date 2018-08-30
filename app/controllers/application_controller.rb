@@ -9,5 +9,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_up, keys: sign_up_attrs
     devise_parameter_sanitizer.permit :account_update, keys: edit_attrs
   end
-  
+
 end

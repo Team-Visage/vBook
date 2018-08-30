@@ -2,7 +2,7 @@
 <% @posts.each do |post| %>
 <div class="post">
   <div class="post_head">
-  <img src="<%=User.find(post.user_id).image_url%>" height="5%" width="5%">
+  <img src="<%=User.find(post.user_id).image_url%>" width="8%">
   <h3><%=  User.find(post.user_id).username%> :
       <%= post.created_at %>
 
@@ -13,7 +13,7 @@
   <p><%= post.message %></p>
   </div>
   <div class="post_actions">
-  <%= link_to '<button type="button">Like</button>'.html_safe, '/like' %>
+  <%= button_to 'Like', posts_path, method: :post %>
   </div>
 </div>
 <% end %>

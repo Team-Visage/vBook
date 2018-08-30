@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180830103138) do
+=======
+ActiveRecord::Schema.define(version: 20180829150138) do
+>>>>>>> JacksBranch
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +23,17 @@ ActiveRecord::Schema.define(version: 20180830103138) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer "user_id"
     t.integer "post_likes"
     t.integer "post_flags"
     t.string "post_tags"
+=======
+    t.bigint "user_id", null: false
+    t.bigint "post_likes", default: 0
+    t.integer "post_flags", limit: 2
+    t.string "post_tags", limit: 500
+>>>>>>> JacksBranch
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -43,9 +54,15 @@ ActiveRecord::Schema.define(version: 20180830103138) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+<<<<<<< HEAD
     t.string "image_url"
     t.string "bio_desc"
     t.string "username"
+=======
+    t.string "username"
+    t.string "image_url", limit: 500
+    t.string "bio_desc", limit: 500
+>>>>>>> JacksBranch
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

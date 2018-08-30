@@ -8,7 +8,10 @@ RSpec.feature 'Message display', type: :feature do
     send_test_msg
   end
   scenario 'Messages are displayed in reverse chronologically' do
-
+    click_link('New post')
+    fill_in 'Message', with: 'message 2'
+    click_button 'Submit'
+    expect('message 2').to appear_before('Hello, world!')
   end
   scenario 'User handle appears in message' do
     expect(page).to have_content('uwotm8')

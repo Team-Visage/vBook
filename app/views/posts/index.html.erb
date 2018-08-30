@@ -1,9 +1,22 @@
+<div class="new_post">
+<%= link_to new_post_path do %>
+  New post
+<% end %>
+&emsp;
+<% if user_signed_in? %>
+<%= link_to('Edit registration ', edit_user_registration_path)%>
+&emsp;
+<%= link_to('Logout ', destroy_user_session_path, method: :delete)%>
 
-<% @posts.each do |post| %>
+<% else %>
+<%= link_to '/users/sign_in' do %>
+  Sign in
+<% end %>
+&emsp;
+<% end %> 
+</div>
+<% @posts.reverse_each do |post| %>
 <div class="post">
-<<<<<<< HEAD
-  <h3><%= User.find(post.user_id).username %> : <%= post.created_at %></h3>
-=======
   <div class="post_head">
   <img src="<%=User.find(post.user_id).image_url%>" width="8%">
   <h3><%=  User.find(post.user_id).username%> :
@@ -13,15 +26,6 @@
   </h3>
   </div>
   <div class="post_body">
->>>>>>> 38726ffb5d3125dee6ce7ef13ec9956a74864b00
   <p><%= post.message %></p>
-  </div>
-  <div class="post_actions">
-  <%= button_to 'Like', posts_path, method: :post %>
-  </div>
 </div>
-<% end %>
-
-<%= link_to new_post_path do %>
-  New post
 <% end %>

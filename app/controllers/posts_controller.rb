@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(post_params)
+    if !post_params.nil?
+      @post = Post.create(post_params)
+    end
     redirect_to posts_url
   end
 
@@ -17,7 +19,19 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def like
+
+  end
+
   private
+
+  def add_likes_to_post(params)
+    authenticate_user!
+    @post = Post.find(params[:posts][:id])
+    @post.post_likes += 1
+    @post.save
+    params = nil
+  end
 
   def post_params
     message = params.require(:post).permit(:message)[:message]

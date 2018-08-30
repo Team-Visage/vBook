@@ -40,6 +40,8 @@ group :development, :test do
   gem 'simplecov-console', require: false
   gem 'rspec-rails', '~> 3.5'
   gem "launchy"
+  gem 'orderly'
+
 end
 
 group :development do

@@ -1,16 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_friend_accounts_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_friend_accounts_spec.rb": [
 
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_homePage_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_homePage_spec.rb": [
 
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_liking_posts_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_liking_posts_spec.rb": [
 
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_login_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_login_spec.rb": [
         1,
         1,
         3,
@@ -26,7 +26,7 @@
         null,
         null
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_logout_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_logout_spec.rb": [
         1,
         1,
         3,
@@ -42,13 +42,13 @@
         null,
         null
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_message_display_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_message_display_spec.rb": [
         1,
         1,
         1,
         3,
         3,
-        3,
+        0,
         0,
         0,
         null,
@@ -65,7 +65,7 @@
         null,
         null
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_message_sending_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_message_sending_spec.rb": [
         1,
         1,
         1,
@@ -73,32 +73,27 @@
         3,
         null,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         1,
-        1,
-        1,
+        0,
+        0,
         0,
         0,
         0,
         null,
         null
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/spec/features/feature_post_comments_spec.rb": [
+      "/Users/danieldenhartog/Documents/vBook/spec/features/feature_post_comments_spec.rb": [
 
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/posts_controller.rb": [
+      "/Users/danieldenhartog/Documents/vBook/app/controllers/posts_controller.rb": [
         1,
-        1,
-        1,
-        0,
-        null,
-        null,
         1,
         0,
         0,
@@ -106,10 +101,15 @@
         null,
         1,
         0,
+        0,
         null,
         null,
         1,
-        11,
+        0,
+        null,
+        null,
+        1,
+        10,
         null,
         null,
         1,
@@ -120,13 +120,22 @@
         null,
         null
       ],
-      "/Users/jackbranch/Desktop/Makers Course Files/Week 8/acebook-rails-template/app/controllers/application_controller.rb": [
+      "/Users/danieldenhartog/Documents/vBook/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1535552658
+    "timestamp": 1535629276
   }
 }

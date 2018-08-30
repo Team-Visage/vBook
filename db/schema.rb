@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 20180829150138) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", limit: 40
+    t.integer "user_id"    , null: true
+    t.integer "post_likes" , null: true
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -40,6 +41,8 @@ ActiveRecord::Schema.define(version: 20180829150138) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "image_url"
+    t.string "bio_desc"
     t.string "username"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

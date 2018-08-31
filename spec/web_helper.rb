@@ -27,18 +27,18 @@ end
 
 def logout_of_acebook
   visit('/')
-  click_link('Logout')
+  click_link('Sign Out')
 end
 
 def login_to_acebook
-  click_link('Sign in')
+  click_link('Sign In To Your Account')
   fill_in('user_email',	with: 'UWotM8@hotmail.com')
   fill_in('user_password',	with: '1234567')
   click_button('Log in')
 end
 
 def sign_up_to_acebook
-  click_link('Sign in')
+  click_link('Sign In To Your Account')
   click_link('Sign up')
   fill_in('user_email',	with: 'UWotM8@hotmail.com')
   fill_in('user_username',	with: 'UWotM8')

@@ -16,6 +16,6 @@ RSpec.feature 'Message display', type: :feature do
   end
   scenario 'Send date appears in message' do
     expect(page).to have_content(': 2018') # will update properly
-    expect(page).to_not have_content('UTC') # uncomment for neat dates
+    # expect(page).to_not have_content('UTC') # uncomment for neat dates
   end
 end

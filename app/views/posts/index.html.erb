@@ -2,12 +2,16 @@
 <%= link_to new_post_path do %>
   New post
 <% end %>
-<% @posts.each do |post| %>
+<% @posts.reverse_each do |post| %>
 <div class="post">
 
+<%# @user = route_to '/user?params[:post]=post' => @user = query  %>
+<div class="invisible">
+<%= @user = User.find(post.user_id) %>
+</div>
   <div class="post_head">
-  <img src="<%=User.find(post.user_id).image_url%>" width="8%">
-  <h3><%=  User.find(post.user_id).username%> :
+  <img src="<%=@user.image_url%>" width="8%">
+  <h3><%=  @user.username%> :
       <%= post.created_at %>
 
       <%= post.post_likes %>

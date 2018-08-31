@@ -20,7 +20,7 @@
 <div class="post">
   <div class="post_head">
   <img src="<%=User.find(post.user_id).image_url%>" width="8%">
-  <h3><%=  User.find(post.user_id).username%> :
+  <h3><%=  <a href="/profile?uersname=#{User.find(post.user_id).username}"</a> User.find(post.user_id).username%> :
       <%= post.created_at %>
 
       <%= post.post_likes %>

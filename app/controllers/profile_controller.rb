@@ -1,7 +1,8 @@
 class ProfileController < ApplicationController
 
   def new
-   p params
+    # @user = User.where(username: params[:username])
+    # redirect_to profile_path 
   end
 
   def create
@@ -9,7 +10,7 @@ class ProfileController < ApplicationController
   end
 
   def index
-
+    
   end
 
   def post_params

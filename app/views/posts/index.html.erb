@@ -7,10 +7,7 @@
 <%= link_to '/' do %>
   Home
 <% end %>
-<<<<<<< HEAD
 
-<% @posts.reverse_each do |post| %>
-=======
 <% @posts.reverse_each do |post| %>
 <div class="post">
 
@@ -22,17 +19,7 @@
   <img src="<%=@user.image_url%>" width="8%">
   <h3><%=  @user.username%> :
       <%= post.created_at %>
->>>>>>> 726753610e6f957ab07fd17d9c4f26599a7bdc0d
-
-  <div class="post">
-  <div class="post_head">
-    <img src="<%=User.find(post.user_id).image_url%>" width="8%">
-    <h3><%=  User.find(post.user_id).username%> :
-        <%= post.created_at %>
-        <%= post.post_likes %>
-    </h3>
-  </div>
-
+      <%= post.post_likes %>
   <div class="post_body">
     <p><%= post.message %></p>
   </div>

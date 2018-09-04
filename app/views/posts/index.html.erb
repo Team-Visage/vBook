@@ -18,13 +18,14 @@
         <%= post.post_likes %>
     </h3>
   </div>
-  
+
   <div class="post_body">
     <p><%= post.message %></p>
   </div>
 
   <div class="post_actions">
-    <%= button_to 'Like', posts_path, method: :post %>
+    <%= button_to 'Like', "/like?post[id]=#{post.id}", method: :post %>
+    <%= button_to 'Comment', posts_path, method: :post %>
   </div>
 
 </div>

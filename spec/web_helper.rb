@@ -17,11 +17,29 @@ def test_user
   }
 end
 
+def test_user_2
+  {
+    email: 'UWotM8@yahoo.com',
+    password: '1234567',
+    confirmed_at: '2018-08-29 08:52:47.366617',
+    username: 'jackIscool',
+    bio_desc: 'a cool guy'
+  }
+end
+
 def test_post
   {
     message: 'hello i am a test message',
     created_at: '2018-08-29 08:52:47.366617',
     user_id: User.where(username: 'uwotm8').first.id
+  }
+end
+
+def test_post_2
+  {
+    message: 'another test message',
+    created_at: '2018-08-29 08:52:47.366617',
+    user_id: User.where(username: 'jackIscool').first.id
   }
 end
 
@@ -55,5 +73,7 @@ end
 
 def add_test_data_to_db
   User.create(test_user)
+  User.create(test_user_2)
   Post.create(test_post)
+  Post.create(test_post_2)
 end

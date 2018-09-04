@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  helper_method :getUser
+
   def new
     @post = Post.new # msg, user, likes etc
   end
@@ -17,5 +20,9 @@ class PostsController < ApplicationController
   def post_params
     message = params.require(:post).permit(:message)[:message]
     { message: message, user_id: current_user.id }
+  end
+
+  def getUser(post)
+    return User.find(post.user_id)
   end
 end

@@ -1,24 +1,31 @@
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
-<%= link_to new_post_path do %>
+
+<p><%= link_to new_post_path do %>
   New post
+<% end %></p>
+
+<%= link_to '/' do %>
+  Home
 <% end %>
-<% @posts.each do |post| %>
-<div class="post">
 
+<% @posts.reverse_each do |post| %>
+
+  <div class="post">
   <div class="post_head">
-  <img src="<%=User.find(post.user_id).image_url%>" width="8%">
-  <h3><%=  User.find(post.user_id).username%> :
-      <%= post.created_at %>
-
-      <%= post.post_likes %>
-  </h3>
+    <img src="<%=User.find(post.user_id).image_url%>" width="8%">
+    <h3><%=  User.find(post.user_id).username%> :
+        <%= post.created_at %>
+        <%= post.post_likes %>
+    </h3>
   </div>
+
   <div class="post_body">
+    <p><%= post.message %></p>
+  </div>
 
-  <p><%= post.message %></p>
-  </div>
   <div class="post_actions">
-  <%= button_to 'Like', posts_path, method: :post %>
+    <%= button_to 'Like', posts_path, method: :post %>
   </div>
-</div>
+
+  </div>
 <% end %>

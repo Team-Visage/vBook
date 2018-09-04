@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   helper_method :getUser
 
   def new
-    @post = Post.new # msg, user, likes etc
+    @post = Post.new
   end
 
   def create
@@ -18,8 +18,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    message = params.require(:post).permit(:message)[:message]
-    { message: message, user_id: current_user.id }
+    params.require(:post).permit(:message).merge(user_id: current_user.id)
   end
 
   def getUser(post)

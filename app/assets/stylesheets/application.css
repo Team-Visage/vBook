@@ -18,3 +18,8 @@
     border-style: outset;
     background-color: 'yellow';
   }
+
+  .invisible{
+    font-size: 0px;
+    color: white;
+  }

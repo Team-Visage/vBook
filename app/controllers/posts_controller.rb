@@ -1,16 +1,11 @@
 class PostsController < ApplicationController
   def new
-    authenticate_user!
-    @post = Post.new
+    @post = Post.new # msg, user, likes etc
   end
 
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
-  end
-
-  def login
-    redirect_to users_sign_in
   end
 
   def index

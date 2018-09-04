@@ -11,15 +11,14 @@
 <% @posts.reverse_each do |post| %>
 <div class="post">
 
-<%# @user = route_to '/user?params[:post]=post' => @user = query  %>
-<div class="invisible">
-<%= @user = User.find(post.user_id) %>
-</div>
   <div class="post_head">
-  <img src="<%=@user.image_url%>" width="8%">
-  <h3><%=  @user.username%> :
-      <%= post.created_at %>
-      <%= post.post_likes %>
+    <img src="<%=getUser(post).image_url%>" width="8%">
+    <h3><%= link_to("/profile?user=#{getUser(post).id}") do%>  <%=getUser(post).username%> <% end %> :
+        <%= post.created_at %>
+        <%= post.post_likes %>
+    </h3>
+  </div>
+  
   <div class="post_body">
     <p><%= post.message %></p>
   </div>
@@ -28,5 +27,5 @@
     <%= button_to 'Like', posts_path, method: :post %>
   </div>
 
-  </div>
+</div>
 <% end %>

@@ -5,11 +5,13 @@ RSpec.feature 'Public Messaging', type: :feature do
     visit('/posts')
   end
   scenario 'User can see list of messsages' do
+    fill_in('user_email',	with: 'UWotM8@hotmail.com')
+    fill_in('user_password',	with: '1234567')
+    click_button('Log in')
     expect(page).to have_content('New post')
     expect(page).to have_content('hello i am a test message')
   end
   scenario 'User cannot post message if not logged in' do
-    click_link 'New post'
     expect(page).to have_content('You need to sign in or sign up before continuing')
   end
   scenario 'Logged in user can post a message and see it displayed' do

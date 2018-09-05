@@ -4,5 +4,5 @@ rvm:
 install:
   - bundle install
   - npm install
-scrit:
+script:
   - rails db:migrate

@@ -1,5 +1,4 @@
 require 'rails_helper'
-#require '../app/models/post'
 RSpec.feature 'User can comment', type: :feature do
   before(:each) { visit('/') }
   scenario 'User can comment on posts' do

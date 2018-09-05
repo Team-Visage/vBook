@@ -28,10 +28,4 @@ class PostsController < ApplicationController
   def getUser(post)
     return User.find(post.user_id)
   end
-
-  def like(post)
-    if !current_user.liked? @post
-      @post.liked_by current_user
-    end
-  end
 end

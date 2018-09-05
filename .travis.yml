@@ -8,4 +8,4 @@ before_script:
   - psql -c 'create database pgapp_development;' -U postgres
   - rails db:migrate
 script:
-  
+  - rspec

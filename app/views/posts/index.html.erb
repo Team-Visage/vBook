@@ -8,24 +8,45 @@
   Home
 <% end %>
 
-<% @posts.reverse_each do |post| %>
+<% @posts.order(:created_at).reverse_each do |post| %>
 <div class="post">
 
   <div class="post_head">
     <img src="<%=getUser(post).image_url%>" width="8%">
-    <h3><%= link_to("/profile?user=#{getUser(post).id}") do%>  <%=getUser(post).username%> <% end %> :
-        <%= post.created_at %>
-        <%= post.post_likes %>
+    <h3><%= link_to("/profile?user=#{getUser(post).id}") do%>  <%=getUser(post).username%> <% end %>
+        Posted at <%= post.created_at %>
     </h3>
   </div>
-  
+
   <div class="post_body">
     <p><%= post.message %></p>
   </div>
+  <p><strong> Liked <%= post.post_likes %> times </strong></p>
 
   <div class="post_actions">
-    <%= button_to 'Like', posts_path, method: :post %>
+    <%= button_to 'Like', "/like?post[id]=#{post.id}", id: 'like'+post.id.to_s, method: :post %>
   </div>
+
+  <h3> Comments </h3>
+
+  <% post.comments.each do |comment| %>
+    <div class="comments">
+      <p><%=comment.username %> : <%=comment.body %></p>
+    </div>
+  <% end %>
+
+  <h3>
+    Add a comment:
+  </h3>
+  <%= form_for ([post, post.comments.build]) do |f| %>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area(:body, {id: 'comment'+post.id.to_s, :class => 'form-control'}) %>
+    </p>
+    <p>
+      <%= f.submit ({id: 'submitComment'+post.id.to_s, :class => 'form-control'})%>
+    </p>
+  <% end %>
 
 </div>
 <% end %>

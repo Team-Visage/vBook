@@ -15,7 +15,7 @@ RSpec.feature 'Message display', type: :feature do
     expect(page).to_not have_content('@hotmail.com') # uncomment when usernames added
   end
   scenario 'Send date appears in message' do
-    expect(page).to have_content(': 2018') # will update properly
+    expect(page).to have_content('2018') # will update properly
     # expect(page).to_not have_content('UTC') # uncomment for neat dates
   end
 end

@@ -77,3 +77,20 @@ def add_test_data_to_db
   Post.create(test_post)
   Post.create(test_post_2)
 end
+
+def signup_login_and_view_posts
+  add_test_data_to_db
+  login_to_acebook
+  click_link("View Posts")
+end
+
+def like_a_post
+  id = Post.where(message: 'hello i am a test message').first.id
+  click_button("like#{id}")
+end
+
+def comment_on_a_post
+  id = Post.where(message: 'hello i am a test message').first.id
+  fill_in("comment#{id}",	with: 'hey babe')
+  click_button("submitComment#{id}")
+end

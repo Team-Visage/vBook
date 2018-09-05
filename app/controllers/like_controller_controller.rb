@@ -1,2 +1,0 @@
-class LikeControllerController < ApplicationController
-end

@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+  - 2.5
+install:
+  - bundle intstall
+  - npm install
+scrit:
+  - rails db:migrate

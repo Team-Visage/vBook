@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.5
 install:
-  - bundle intstall
+  - bundle install
   - npm install
 scrit:
   - rails db:migrate

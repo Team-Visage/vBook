@@ -23,3 +23,29 @@
     font-size: 0px;
     color: white;
   }
+
+  .profileBody {
+    margin-right: 10%;
+    margin-left: 10%;
+    border-style: solid;
+  }
+
+  .profileNameHeader {
+    padding: 10%;
+    font-size: 30px;
+    color: seagreen;
+  }
+
+  .profilePicture {
+    height: 200px;
+    border-style: outset;
+  }
+
+  .profileImageDiv {
+    padding: 2%;
+  }
+
+  .profileBio {
+    padding: 5%;
+    font-size: 25px;
+  }

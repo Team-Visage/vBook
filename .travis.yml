@@ -4,6 +4,8 @@ rvm:
 install:
   - bundle install
   - npm install
-script:
+before_script:
+  - psql -c 'create database pgapp_development;' -U postgres
   - rails db:migrate
-  - rails server
+script:
+  

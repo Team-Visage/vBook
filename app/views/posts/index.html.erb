@@ -1,14 +1,18 @@
+<%= javascript_pack_tag 'application' %>
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
 
 <p><%= link_to new_post_path do %>
   New post
 <% end %></p>
-
+<%= react_component('NewPost', {user: @user})%>
 <%= link_to '/' do %>
   Home
 <% end %>
 
 <% @posts.reverse_each do |post| %>
+
+<%= react_component('PostDisplay', {post: post, user: getUser(post)})%>
+
 <div class="post">
 
   <div class="post_head">

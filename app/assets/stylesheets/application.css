@@ -49,3 +49,16 @@
     padding: 5%;
     font-size: 25px;
   }
+
+  .postHead {
+    display: flex;
+    padding: 10px;
+  }
+
+  .postImage {
+    height: 50px;
+  }
+
+  .postBody {
+    border-style: outset;
+  }

@@ -24,7 +24,7 @@
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 
   <div class="post_actions">
-    <%= button_to 'Like', "/like?post[id]=#{post.id}", method: :post %>
+    <%= button_to 'Like', "/like?post[id]=#{post.id}", id: 'like'+post.id.to_s, method: :post %>
   </div>
 
   <h3> Comments </h3>

@@ -8,7 +8,7 @@
   Home
 <% end %>
 
-<% @posts.reverse_each do |post| %>
+<% @posts.order(:created_at).reverse_each do |post| %>
 <div class="post">
 
   <div class="post_head">

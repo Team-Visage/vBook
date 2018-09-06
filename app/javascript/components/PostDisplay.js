@@ -1,25 +1,46 @@
 import React from "react"
 import PropTypes from "prop-types"
+import NewPost from "./NewPost"
+import Post from "./Post"
 class PostDisplay extends React.Component {
 
-  // set state 
+  constructor() {
+    super()
+    this.state = {
+      userLoggedIn: true,
+      newPost: false
+    }
+
+  }
 
   render () {
     return (
       <React.Fragment>
-        <div className="postBody" align="center">
-          <div className = "postHead" align="center">
-          <img src={this.props.user.image_url} className="postImage"></img>
-          {this.props.post.created_at}
-          {this.props.user.username}
-          </div>
-          <div className = "postBody">
-          {this.props.post.message}
-          </div>
-        </div>
-      </React.Fragment>
+      <div id="Header">
+        <button id="newPostCreate" onClick={() => this.setState({newPost: true})}>New Post</button>
+      </div>
+      {this.renderAllPosts()}
+      {this.newPost()}
+      </React.Fragment>   
+    )
+  }
+
+
+
+  renderAllPosts() {
+    return (  
+        <Post/>
     );
   }
+
+  newPost() {
+    if(this.state.newPost) {
+      return (
+       <NewPost />
+      )
+    }
+  }
+
 }
 
 PostDisplay.propTypes = {

@@ -4,15 +4,13 @@
 <p><%= link_to new_post_path do %>
   New post
 <% end %></p>
-<%= react_component('NewPost', {user: @user})%>
 <%= link_to '/' do %>
   Home
 <% end %>
 
+<%= react_component('PostDisplay', {postList: @posts, user: @user})%>
+
 <% @posts.reverse_each do |post| %>
-
-<%= react_component('PostDisplay', {post: post, user: getUser(post)})%>
-
 <div class="post">
 
   <div class="post_head">

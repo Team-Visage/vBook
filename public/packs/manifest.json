@@ -1,8 +1,8 @@
 {
-  "application.js": "/packs/application-c20fcbb2853b1b6b57f0.js",
-  "application.js.map": "/packs/application-c20fcbb2853b1b6b57f0.js.map",
-  "hello_react.js": "/packs/hello_react-08e4c4160b31d0ed5e20.js",
-  "hello_react.js.map": "/packs/hello_react-08e4c4160b31d0ed5e20.js.map",
-  "server_rendering.js": "/packs/server_rendering-1dc123375b8fde8c856b.js",
-  "server_rendering.js.map": "/packs/server_rendering-1dc123375b8fde8c856b.js.map"
+  "application.js": "/packs/application-4a3631efd6fc8bf60d9d.js",
+  "application.js.map": "/packs/application-4a3631efd6fc8bf60d9d.js.map",
+  "hello_react.js": "/packs/hello_react-8fcaa9854af38d7d8dbd.js",
+  "hello_react.js.map": "/packs/hello_react-8fcaa9854af38d7d8dbd.js.map",
+  "server_rendering.js": "/packs/server_rendering-1a3dd3f0de43da561d48.js",
+  "server_rendering.js.map": "/packs/server_rendering-1a3dd3f0de43da561d48.js.map"
 }

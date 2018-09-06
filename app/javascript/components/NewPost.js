@@ -5,8 +5,7 @@ class NewPost extends React.Component {
     return (
       <React.Fragment>
         <label>Message:</label>
-        <textarea className="newPost" id="newPostSubmit" onClick={() => this.setMessageBoxText('') }>
-        Whats on your mind?
+        <textarea className="newPost" id="newPostSubmit" defaultValue="Whats on your mind?" onClick={() => this.setMessageBoxText('') }>
         </textarea>
         <button id="submitPost" onClick={() => this.submitPost()}>Submit</button>
       </React.Fragment>
@@ -23,7 +22,7 @@ class NewPost extends React.Component {
   }
   
   getMessageBoxText() {
-    return document.getElementById('newPostSubmit').val()
+    return document.getElementById('newPostSubmit').value
   }
 
 }

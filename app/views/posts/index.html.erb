@@ -21,11 +21,18 @@
   <div class="post_body">
     <p><%= post.message %></p>
   </div>
+
+  <%= button_to "Edit", edit_post_path(post) %>
+  <%= button_to "Delete", post_path(post),
+                          method: :delete,
+                          data: {confirm: "Are you sure?"} %>
+  <hr>
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 
   <div class="post_actions">
     <%= button_to 'Like', "/like?post[id]=#{post.id}", id: 'like'+post.id.to_s, method: :post %>
   </div>
+  <hr>
 
   <h3> Comments </h3>
 
@@ -34,7 +41,7 @@
       <p><%=comment.username %> : <%=comment.body %></p>
     </div>
   <% end %>
-
+  <hr>
   <h3>
     Add a comment:
   </h3>

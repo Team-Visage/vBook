@@ -30,7 +30,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    #also need to destroy comments
     @post = Post.find(params[:id])
     while @comment = Comment.find_by(post_id: @post.id) do
       @comment.destroy

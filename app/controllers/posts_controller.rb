@@ -24,12 +24,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(:id)
+    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to posts_url
   end
 
   def destroy
+    #also need to destroy comments
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url

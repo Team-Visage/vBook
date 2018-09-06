@@ -1,7 +1,8 @@
 log/
 tmp/
 coverage/
-coverage//public/packs
+coverage//public/pack
+public/
 /public/packs-test
 /node_modules
 yarn-debug.log*

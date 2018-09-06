@@ -22,11 +22,13 @@
     <p><%= post.message %> </p>
   </div>
 
+  <% if getUser(post).id == current_user.id %>
   <%= button_to "Edit", edit_post_path(post), id: 'edit'+post.id.to_s %>
 
-  <%= button_to "Delete", post_path(post), id:'delete'+post.id.to_s, 
+  <%= button_to "Delete", post_path(post), id:'delete'+post.id.to_s,
                           method: :delete,
                           data: {confirm: "Are you sure?"} %>
+  <% end %>
   <hr>
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 

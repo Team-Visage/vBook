@@ -6,7 +6,7 @@ class LikeController < ApplicationController
       redirect_to posts_path
     else
       @post.post_likes += 1
-      @post.liked_by.push(current_user.id)
+      @post.liked_by.push(current_user.id.to_s)
       @post.save
       redirect_to posts_path
     end

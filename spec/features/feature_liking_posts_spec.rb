@@ -12,6 +12,5 @@ RSpec.feature 'Post likes', type: :feature do
     like_a_post
     expect(page).to have_content('Liked 1 times')
     expect(page).to_not have_content('Liked 2 times')
-    save_and_open_page
   end
 end

@@ -19,12 +19,39 @@ class PostPage extends React.Component {
         <button id='newPostActiveButton' onClick={() => this.setState({newPostActive: true})}>New Post</button>
       </div>
         {this.newPost()}
-        {this.postHead()}
-        {this.postBody()}
-        {this.commentsDisplay()}
+        {this.renderSinglePost()}
       </React.Fragment>
     );
   }
+
+  renderAllPosts() {
+    return (
+      <div className = 'postMainDiv'>
+        {this.props.postList.map(function(post){
+          return (
+            <Post
+              key={post.id}
+              postCreator={post.user_id}
+              postDate={post.created_at}
+              postBody={post.message}
+              postComments={post.comments}
+            />
+          )
+        })}
+      </div>
+    )
+  }
+
+  renderSinglePost() {
+    return (
+      <div className = 'singlePostDiv'>
+      {this.postHead()}
+      {this.postBody()}
+      {this.commentsDisplay()}
+    </div>
+    )
+  }
+
   postHead(){
     return(
       <div className='postHead'>
@@ -143,5 +170,6 @@ PostPage.propTypes = {
   currentUser: PropTypes.instanceOf(Object),
   postUser: PropTypes.instanceOf(Object),
   postComments: PropTypes.instanceOf(Object),
+  postList: PropTypes.instanceOf(Object)
 };
 export default PostPage

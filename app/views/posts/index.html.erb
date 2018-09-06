@@ -12,8 +12,8 @@
 <% end %>
 
 <% @posts.order(:created_at).reverse_each do |post| %>
-
-<%= react_component('PostPage', {post: post, currentUser: @user, postUser: getUser(post), postComments: post.comments}) %>
+<%= react_component%>
+<%= react_component('PostPage', {post: post, currentUser: @user, postUser: getUser(post), postComments: post.comments, postList: @posts}) %>
 
 <!-- <div class="post">
 

@@ -14,18 +14,26 @@
   <div class="post_head">
     <img src="<%=getUser(post).image_url%>" width="8%">
     <h3><%= link_to("/profile?user=#{getUser(post).id}") do%>  <%=getUser(post).username%> <% end %>
-        Posted at <%= post.created_at %>
+        Posted on <%= post.created_at %>
     </h3>
   </div>
 
   <div class="post_body">
-    <p><%= post.message %></p>
+    <p><%= post.message %> </p>
   </div>
+
+  <%= button_to "Edit", edit_post_path(post), id: 'edit'+post.id.to_s %>
+
+  <%= button_to "Delete", post_path(post), id:'delete'+post.id.to_s, 
+                          method: :delete,
+                          data: {confirm: "Are you sure?"} %>
+  <hr>
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 
   <div class="post_actions">
     <%= button_to 'Like', "/like?post[id]=#{post.id}", id: 'like'+post.id.to_s, method: :post %>
   </div>
+  <hr>
 
   <h3> Comments </h3>
 
@@ -34,7 +42,7 @@
       <p><%=comment.username %> : <%=comment.body %></p>
     </div>
   <% end %>
-
+  <hr>
   <h3>
     Add a comment:
   </h3>

@@ -6,7 +6,7 @@ class Post extends React.Component {
       <React.Fragment>
         <div className="postBody" align="center">
         <div className = "postHead" align="center">
-        
+          
           
         </div>
         <div className = "postBody">

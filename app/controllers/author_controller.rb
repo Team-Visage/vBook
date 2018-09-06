@@ -3,7 +3,8 @@ class AuthorController < ApplicationController
   def create
     p params
     # return user object
-    redirect_to posts_path
+    @user = User.find(params[:user_id])
+    return @user
   end
 
 end

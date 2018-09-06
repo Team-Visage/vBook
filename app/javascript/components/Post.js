@@ -41,7 +41,7 @@ class Post extends React.Component {
   }
 
   getPostAuthor(id) {
-    
+   fetch(`/author?user_id=${this.state.postUser}`)
   }
 
   getPostComments() {

@@ -47,4 +47,5 @@ class PostsController < ApplicationController
   def getUser(post)
     return User.find(post.user_id)
   end
+
 end

@@ -19,4 +19,10 @@ RSpec.feature 'Profile pages', type: :feature do
     expect(page).to have_content('a cool guy')
   end
 
+  scenario 'User can see their posts' do
+    visit('/posts')
+    click_link('jackIscool')
+    expect(page).to have_content('another test message')
+  end
+
 end

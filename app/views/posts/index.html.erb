@@ -26,7 +26,7 @@
 
   <%= button_to "Delete", post_path(post), id:'delete'+post.id.to_s, 
                           method: :delete,
-                          data: {confirm: "Are you sure?"} %> 
+                          data: {confirm: "Are you sure?"} %>
   <hr>
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 

@@ -14,12 +14,12 @@
   <div class="post_head">
     <img src="<%=getUser(post).image_url%>" width="8%">
     <h3><%= link_to("/profile?user=#{getUser(post).id}") do%>  <%=getUser(post).username%> <% end %>
-        Posted at <%= post.created_at %>
+        Posted on <%= post.created_at %>
     </h3>
   </div>
 
   <div class="post_body">
-    <p><%= post.message %></p>
+    <p><%= post.message %> </p>
   </div>
 
   <%= button_to "Edit", edit_post_path(post) %>

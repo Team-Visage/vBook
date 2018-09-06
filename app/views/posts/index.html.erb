@@ -22,7 +22,8 @@
     <p><%= post.message %> </p>
   </div>
 
-  <%= button_to "Edit", edit_post_path(post) %>
+  <%= button_to "Edit", edit_post_path(post), id: 'edit'+post.id.to_s %>
+
   <%= button_to "Delete", post_path(post),
                           method: :delete,
                           data: {confirm: "Are you sure?"} %>

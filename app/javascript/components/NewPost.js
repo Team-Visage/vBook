@@ -29,7 +29,6 @@ class NewPost extends React.Component {
       return (
         <div className = 'newPostDiv'>
           <form method = 'post' action = {`/posts?post[message]=${this.state.newPostText}`}>
-            <label><h3>Message</h3></label>
             <textarea id='NewPostTextInput' onChange={this.updateNewPost.bind(this)}></textarea>
             <button id='newPostSubmit'>Submit</button>
           </form>

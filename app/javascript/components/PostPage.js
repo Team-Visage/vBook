@@ -36,7 +36,9 @@ class PostPage extends React.Component {
     return(
       <div className='postHead'>
         <button id={`postUser${this.props.post.id}`}className="userProfileButton" onClick={() => window.location=`/profile?user=${this.props.postUser.id}`}>{this.props.postUser.username}</button>
+        <br/>
         <img src={this.props.postUser.image_url} height='100px'/>
+        <br/>
         Posted at {this.props.post.created_at}
       </div>
     )
@@ -46,10 +48,10 @@ class PostPage extends React.Component {
     return(
       <div className='postBody'>
         <p> "{this.props.post.message}" </p>
-        <p> <strong> Liked {this.props.post.post_likes} times </strong> </p>
         <div className="postFooter">
-        {this.likePost()}
         {this.modifyPost()}
+        <p> <strong> Liked {this.props.post.post_likes} times </strong> </p>
+        {this.likePost()}
         </div>
       </div>
     )
@@ -101,12 +103,13 @@ class PostPage extends React.Component {
             return <p>{comment.username}: "{comment.body}"</p>
           })}
           {this.commentSubmit()}
+          <hr/>
         </div>
       )
     }
   }
 
-  
+
 
   likePost(){
     return(

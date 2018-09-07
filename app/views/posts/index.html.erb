@@ -8,6 +8,7 @@
   Home
 <% end %>
 
+<div class = "posts_container">
 <% @posts.order(:created_at).reverse_each do |post| %>
 <div class="post">
 
@@ -60,3 +61,4 @@
 
 </div>
 <% end %>
+</div>

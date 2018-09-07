@@ -1,0 +1,27 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+    body{
+        margin: 2%;
+        background-color: white  ;  
+
+    }
+    
+    a{
+        font-size: 1.5em; 
+        color: darkblue;  
+    }
+
+    .posts_container{
+        margin: 2%; 
+        padding: 20px; 
+        background-color: rgba(0, 0, 0, 0.2); 
+        border-radius: 5px; 
+    ; 
+    }

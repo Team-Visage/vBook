@@ -1,5 +1,6 @@
+
 <% if user_signed_in? %>
-<p>Hello <%= current_user.username %></p>
+<h2>Hello <%= current_user.username %></h2>
 <%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %>
 &emsp;
 <%= link_to('Edit Registration ', edit_user_registration_path)%>
@@ -15,7 +16,8 @@
 <%= link_to('Profile', '/profile') %>
 <% else %>
 <%= link_to '/users/sign_in' do %>
-  Sign In To Your Account
+  <p class = "sign_in_button"> Sign In To Your Account
 <% end %>
 &emsp;
 <% end %>
+</div>

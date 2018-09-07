@@ -60,7 +60,7 @@ class PostPage extends React.Component {
       return (
         <div>
           <button id="editPost" onClick={() => this.editPost()}>Edit</button>
-          <form method="post" action={`/posts/delete?post['id']=${this.props.post.id}`}>
+          <form method="post" action={`/posts/delete?id=${this.props.post.id}`}>
           <button id="deletePost">Delete</button>
           {this.showPostEdit()}
           </form>

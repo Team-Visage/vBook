@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   resources :profile
   resources :like
+  post '/posts/delete', to: 'posts#destroy'
+  post '/posts/change', to: 'posts#update'
   get '/', to: 'home#index'
 end
 

@@ -63,8 +63,7 @@ class PostPage extends React.Component {
         <div>
           <button id="editPost" onClick={() => this.editPost()}>Edit</button>
           <form method="post" action={`/posts/delete?id=${this.props.post.id}`}>
-          <button id="deletePost">Delete</button>
-          {this.showPostEdit()}
+          <button id="deletePost">Delete</button> {this.showPostEdit()}
           </form>
         </div>
       )
@@ -74,12 +73,16 @@ class PostPage extends React.Component {
   showPostEdit() {
     if(this.state.editingActive) {
       return (
-        <form method="post" action={`/posts/${this.props.post.id}/edit?['message']=${this.props.post.message}`}>
-          <textarea defaultValue={this.props.post.message}></textarea>
+        <form method="post" action={`/posts/change?}post[id]=${this.props.post.id}d&id=${this.props.post.id}&post[message]=${this.state.editedPostText}&message=${this.state.editedPostText}`}>
+          <textarea defaultValue={this.props.post.message}onChange={this.updateTextEdit.bind(this)}></textarea>
           <button>Submit</button>
         </form>
       )
     }
+  }
+
+  updateTextEdit(e) {
+   this.setState({ editedPostText: e.target.value })
   }
 
   editPost() {

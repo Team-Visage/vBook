@@ -1,18 +1,8 @@
 <%= javascript_pack_tag 'application' %>
-<%= csrf_meta_tag %>
-
 <p><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></p>
-
-<p><%= link_to new_post_path do %>
-  New post
-<% end %></p>
-
-<%= link_to '/' do %>
-  Home
-<% end %>
-<%= react_component('PostPage', {post: @posts[0], currentUser: @user, postUser: @user, postComments: @posts[0].comments, postList: @posts}) %>
+<%= react_component('NewPost')%>
 <% @posts.order(:created_at).reverse_each do |post| %>
-
+<%= react_component('PostPage', {post: post, currentUser: @user, postUser: getUser(post), postComments: post.comments}) %>
 
 <!-- <div class="post">
 

@@ -15,7 +15,8 @@ RSpec.feature 'Profile pages', type: :feature do
 
   scenario 'User can see other user profile' do
     visit('/posts')
-    click_link('jackIscool')
+    save_and_open_page
+    find_button('jackIscool').click
     expect(page).to have_content('a cool guy')
   end
 

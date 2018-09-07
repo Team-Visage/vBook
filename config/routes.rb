@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   end
   resources :profile
   resources :like
-  resources :authod
   get '/', to: 'home#index'
 end

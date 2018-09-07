@@ -19,7 +19,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 Capybara.javascript_driver = :poltergeist
 Capybara.default_driver = :poltergeist
-
+Capybara.current_driver = :poltergeist
 ActiveRecord::Migration.maintain_test_schema!
 
 

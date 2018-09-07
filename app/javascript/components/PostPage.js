@@ -22,10 +22,6 @@ class PostPage extends React.Component {
     );
   }
 
-  renderSinglePost() {
-
-  }
-
   postHead(){
     return(
       <div className='postHead'>
@@ -67,8 +63,6 @@ class PostPage extends React.Component {
       )
     }
   }
-
-  
 
   likePost(){
     return(

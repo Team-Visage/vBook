@@ -7,11 +7,11 @@
 describe("React related feature tests", function() {
 
   beforeEach(function() {
-    
+    cy.visit('localhost:3000/posts')
   });
 
   describe("Post related tests", function() {
-
+    
   });
 
   describe("User related tests", function() {

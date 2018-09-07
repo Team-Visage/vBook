@@ -15,16 +15,16 @@
 <% end %>
 &emsp;
 
-<div style="border:1px solid black;">
-<h1><p><%= @user.username %>'s Profile</p></h1>
+<div>
+<h1><strong><p><%= @user.username %>'s Profile</p></strong></h1>
 <p><img src="<%= @user.image_url %>" height: "200px"></p>
-<h2> About </h2>
+<h3> About: </h3>
 <p><%= @user.bio_desc %></p>
 </div>
 <p>
-<div style="border:1px solid black;">
+<div>
 
-<h2><%= @user.username %>'s Posts:</h2>
+<h3><%= @user.username %>'s Posts:</h3>
 
 <% @all_posts.each do |user_post| %>
 

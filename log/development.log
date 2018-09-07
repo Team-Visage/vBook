@@ -9046,3 +9046,39 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 181ms (Views: 171.8ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/profile" for 127.0.0.1 at 2018-09-07 14:35:17 +0100
+Processing by ProfileController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profile/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profile/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 66ms (Views: 60.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-09-07 14:36:09 +0100
+Processing by ProfileController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profile/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profile/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 62ms (Views: 57.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-09-07 14:36:39 +0100
+Processing by ProfileController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profile/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profile/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 62ms (Views: 54.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2018-09-07 14:37:05 +0100
+Processing by ProfileController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profile/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered profile/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 39.2ms | ActiveRecord: 1.4ms)
+
+

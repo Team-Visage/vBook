@@ -33,7 +33,11 @@
   <p><strong> Liked <%= post.post_likes %> times </strong></p>
 
   <div class="post_actions">
+    <% if !post.liked_by.include?(current_user.id.to_s) %>
     <%= button_to 'Like', "/like?post[id]=#{post.id}", id: 'like'+post.id.to_s, method: :post %>
+    <% else %>
+    <%= button_to 'Unlike', "/like?post[id]=#{post.id}", id: 'unlike'+post.id.to_s, method: :post %>
+    <% end %>
   </div>
   <hr>
 

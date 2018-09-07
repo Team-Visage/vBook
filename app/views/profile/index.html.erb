@@ -28,7 +28,7 @@
 
 <% @all_posts.each do |user_post| %>
 
-<p> <i><%= user_post.message %></i> at <%= user_post.created_at %> </p>
+<p> <i><%= user_post.message %></i> at <%= user_post.created_at.strftime("%B %d %Y @ %H:%M") %> </p>
 
 <% end %>
 

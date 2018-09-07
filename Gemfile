@@ -46,6 +46,8 @@ group :development, :test do
   gem 'simplecov-console', require: false
   gem 'rspec-rails', '~> 3.5'
   gem "launchy"
+  gem 'phantomjs'
+  gem 'poltergeist'
 end
 
 group :development do

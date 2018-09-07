@@ -1,3 +1,19 @@
-<%= @user.username %>
-<img src="<%= @user.image_url %>">
-<%= @user.bio_desc %>
+<div style="border:1px solid black;">
+<h1><p><%= @user.username %>'s Profile</p></h1>
+<p><img src="<%= @user.image_url %>" width=8%></p>
+<h2> About </h2>
+<p><%= @user.bio_desc %></p>
+</div>
+<p>
+<div style="border:1px solid black;">
+
+<h2><%= @user.username %>'s Posts:</h2>
+
+<% @all_posts.each do |user_post| %>
+
+<p> <i><%= user_post.message %></i> at <%= user_post.created_at %> </p>
+
+<% end %>
+
+</div>
+</p>

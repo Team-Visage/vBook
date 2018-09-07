@@ -20,6 +20,25 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to posts_url
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    while @comment = Comment.find_by(post_id: @post.id) do
+      @comment.destroy
+    end
+    @post.destroy
+    redirect_to posts_url
+  end
+
   private
 
   def post_params
@@ -29,4 +48,5 @@ class PostsController < ApplicationController
   def getUser(post)
     return User.find(post.user_id)
   end
+
 end

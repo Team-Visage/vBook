@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.feature 'Profile pages', type: :feature do
 
   before(:each) do
@@ -14,15 +13,8 @@ RSpec.feature 'Profile pages', type: :feature do
   end
 
   scenario 'User can see other user profile' do
-    visit('/posts')
-    click_link('jackIscool')
+    visit("/profile?user=#{User.where(username: 'jackIscool').first.id}")
+    save_and_open_page
     expect(page).to have_content('a cool guy')
   end
-
-  scenario 'User can see their posts' do
-    visit('/posts')
-    click_link('jackIscool')
-    expect(page).to have_content('another test message')
-  end
-
 end

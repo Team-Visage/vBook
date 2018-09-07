@@ -60,18 +60,28 @@ class PostPage extends React.Component {
       return (
         <div>
           <button id="editPost" onClick={() => this.editPost()}>Edit</button>
-          <button id="deletePost" onClick={() => this.deletePost()}>Delete</button>
+          <form method="post" action="/posts/destroy">
+          <button id="deletePost">Delete</button>
+          </form>
         </div>
       )
     }
   }
 
-  editPost() {
-    
+  showPostEdit() {
+    if(this.editingActive) {
+      return (
+        <form>
+          <textarea defaultValue={this.props.post.message}></textarea>
+          <button>Submit</button>
+        </form>
+      )
+    }
   }
 
-  deletePost() {
-
+  editPost() {
+    this.setState({editingActive: true})
+    console.log(this.state.editingActive)
   }
 
   displayComment(comment){
@@ -130,10 +140,6 @@ class PostPage extends React.Component {
 
   updateComment(e) {
     this.setState({ commentText: e.target.value })
-  }
-
-  editPost(e) {
-    this.setState({ editedPostText: e.target.value })
   }
 
   postComment() {

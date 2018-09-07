@@ -36,7 +36,7 @@ class PostPage extends React.Component {
     return(
       <div className='postHead'>
         <button id={`postUser${this.props.post.id}`}className="userProfileButton" onClick={() => window.location=`/profile?user=${this.props.postUser.id}`}>{this.props.postUser.username}</button>
-        <img src={this.props.postUser.image_url} height='50px'/>
+        <img src={this.props.postUser.image_url} height='100px'/>
         Posted at {this.props.post.created_at}
       </div>
     )
@@ -60,7 +60,7 @@ class PostPage extends React.Component {
       return (
         <div>
           <button id="editPost" onClick={() => this.editPost()}>Edit</button>
-          <form method="post" action={`/posts?post['id']=${this.props.post.id}`}>
+          <form method="post" action={`/posts/delete?post['id']=${this.props.post.id}`}>
           <button id="deletePost">Delete</button>
           {this.showPostEdit()}
           </form>

@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'webpacker'
 gem 'react-rails'
 
+gem 'bootstrap-sass', '3.2.0.2'
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

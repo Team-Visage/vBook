@@ -45,71 +45,80 @@ class PostPage extends React.Component {
       </div>
     )
   }
-
-  displayComment(comment){
-    return(
-      <div className='comment'>
-        <p>{comment.username}: {comment.body}</p>
-      </div>
-    )
-  }
-
-  commentsDisplay(){
-    var commentList = this.props.postComments
-    if(commentList != null){
-      return(
-        <div className='commentsDisplay'>
-          {commentList.map(function(comment){
-            return <p>{comment.username}: "{comment.body}"</p>
-          })}
-          {this.commentSubmit()}
-        </div>
-      )
-    }
-  }
-
-  
-
-  likePost(){
-    return(
-      <div>
-        <form method='post' action={`/like?post[id]=${this.props.post.id}`}>
-          <button id={`like${this.props.post.id}`} type='Submit'>Like</button>
-        </form>
-      </div>
-    )
-  }
-
-  commentSubmit(){
-    var id = this.props.post.id
-    if(this.state.newComment){
-      return(
-        <div >
-          <form method='post'>
-          <textarea id={`textarea${id}`} value={this.state.commentText} onChange={this.updateComment.bind(this)}> placeholder></textarea>
-          <p><button id={`submit${id}`} formAction = {`posts/${id}/comments?comment[body]=${this.state.commentText}`}>Sumbit</button></p>
-          </form>
-        </div>
-      )
-    } else{
-      return (
-          <div>
-              <button id={`comment${this.props.post.id}`} type='Submit' onClick={() => this.setState({newComment: true})}>New Comment</button>
-          </div>
-      )
-    }
-  }
-
-  updateComment(e) {
-    this.setState({ commentText: e.target.value })
-  }
-
-  editPost(e) {
-    this.setState({ editedPostText: e.target.value })
-  }
-
-  postComment() {
-    this.setState({newComment: false})
+  //
+  // displayComment(comment){
+  //   return(
+  //     <div className='comment'>
+  //       <p>{comment.username}: {comment.body}</p>
+  //     </div>
+  //   )
+  // }
+  //
+  // commentsDisplay(){
+  //   var commentList = this.props.postComments
+  //   if(commentList != null){
+  //     return(
+  //       <div className='commentsDisplay'>
+  //         {commentList.map(function(comment){
+  //           return <p>{comment.username}: "{comment.body}"</p>
+  //         })}
+  //         {this.commentSubmit()}
+  //       </div>
+  //     )
+  //   }
+  // }
+  //
+  //
+  //
+  // likePost(){
+  //   if(!this.props.post.liked_by.includes(2)){
+  //     return(
+  //       <div>
+  //         <form method='post' action={`/like?post[id]=${this.props.post.id}`}>
+  //           <button id={`like${this.props.post.id}`} type='Submit'>Like</button>
+  //         </form>
+  //       </div>
+  //     )
+  //   }
+  //   else{
+  //     <div>
+  //       <form method='post' action={`/like?post[id]=${this.props.post.id}`}>
+  //         <button id={`unlike${this.props.post.id}`} type='Submit'>Unlike</button>
+  //       </form>
+  //     </div>
+  //   }
+  // }
+  //
+  // commentSubmit(){
+  //   var id = this.props.post.id
+  //   if(this.state.newComment){
+  //     return(
+  //       <div >
+  //         <form method='post'>
+  //         <textarea id={`textarea${id}`} value={this.state.commentText} onChange={this.updateComment.bind(this)}> placeholder></textarea>
+  //         <p><button id={`submit${id}`} formAction = {`posts/${id}/comments?comment[body]=${this.state.commentText}`}>Sumbit</button></p>
+  //         </form>
+  //       </div>
+  //     )
+  //   } else{
+  //     return (
+  //         <div>
+  //             <button id={`comment${this.props.post.id}`} type='Submit' onClick={() => this.setState({newComment: true})}>New Comment</button>
+  //         </div>
+  //     )
+  //   }
+  // }
+  //
+  // updateComment(e) {
+  //   this.setState({ commentText: e.target.value })
+  // }
+  //
+  // editPost(e) {
+  //   this.setState({ editedPostText: e.target.value })
+  // }
+  //
+  // postComment() {
+  //   this.setState({newComment: false})
   }
 }
 

@@ -1,12 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
 class PostPage extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       newComment: false,
       commentText: '',
-      editedPostText: ''
+      editedPostText: '',
+      editingActive: false,
+      isPostOwner: props.currentUser.id == props.postUser.id ? true : false
+    }
+  }
+
+  setOwnership() {
+    if(this.props.currentUser.id == this.props.postUser.id) {
+      this.setState({isPostOwner: true})
+    } else {
+      this.setState({isPostOwner: false})
     }
   }
 
@@ -20,10 +30,6 @@ class PostPage extends React.Component {
       </div>
       </React.Fragment>
     );
-  }
-
-  renderSinglePost() {
-
   }
 
   postHead(){
@@ -41,9 +47,31 @@ class PostPage extends React.Component {
       <div className='postBody'>
         <p> "{this.props.post.message}" </p>
         <p> <strong> Liked {this.props.post.post_likes} times </strong> </p>
+        <div className="postFooter">
         {this.likePost()}
+        {this.modifyPost()}
+        </div>
       </div>
     )
+  }
+
+  modifyPost() {
+    if(this.state.isPostOwner) {
+      return (
+        <div>
+          <button id="editPost" onClick={() => this.editPost()}>Edit</button>
+          <button id="deletePost" onClick={() => this.deletePost()}>Delete</button>
+        </div>
+      )
+    }
+  }
+
+  editPost() {
+    
+  }
+
+  deletePost() {
+
   }
 
   displayComment(comment){
